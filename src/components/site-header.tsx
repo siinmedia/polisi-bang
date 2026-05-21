@@ -1,16 +1,16 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 
 const links = [
-  { to: "/", label: "Exhibitions", end: true },
-  { to: "/store", label: "Store" },
-  { to: "/about", label: "About" },
-  { to: "/ranking", label: "Ranking" },
+  { to: "/" as const, label: "Exhibitions" },
+  { to: "/store" as const, label: "Store" },
+  { to: "/about" as const, label: "About" },
+  { to: "/ranking" as const, label: "Ranking" },
 ];
 
 const right = [
-  { to: "/contacts", label: "Contacts" },
-  { to: "/blog", label: "Blog" },
-  { to: "/privacy", label: "Privacy" },
+  { to: "/contacts" as const, label: "Contacts" },
+  { to: "/blog" as const, label: "Blog" },
+  { to: "/privacy" as const, label: "Privacy" },
 ];
 
 export function Header() {
@@ -19,16 +19,15 @@ export function Header() {
       <div className="grid grid-cols-3 items-center px-3 md:px-5 py-3 md:py-3.5 text-[9px] md:text-[10px] uppercase tracking-[0.22em]">
         <nav className="flex gap-3 md:gap-6 overflow-hidden items-center">
           {links.map((l, i) => (
-            <NavLink
+            <Link
               key={l.to}
               to={l.to}
-              end={l.end}
-              className={({ isActive }) =>
-                `relative py-1 transition-opacity ${i > 0 ? "hidden sm:inline" : ""} ${isActive ? "font-bold opacity-100" : "opacity-70 hover:opacity-100"}`
-              }
+              className={`relative py-1 hover:opacity-100 opacity-70 transition-opacity ${i > 0 ? "hidden sm:inline" : ""}`}
+              activeProps={{ className: "font-bold opacity-100 [&]:opacity-100" }}
+              activeOptions={{ exact: true }}
             >
               {l.label}
-            </NavLink>
+            </Link>
           ))}
         </nav>
 
@@ -41,15 +40,14 @@ export function Header() {
 
         <nav className="flex justify-end items-center gap-3 md:gap-5">
           {right.map((l) => (
-            <NavLink
+            <Link
               key={l.to}
               to={l.to}
-              className={({ isActive }) =>
-                `hidden md:inline transition-opacity ${isActive ? "font-bold opacity-100" : "opacity-70 hover:opacity-100"}`
-              }
+              className="hidden md:inline opacity-70 hover:opacity-100 transition-opacity"
+              activeProps={{ className: "font-bold [&]:opacity-100" }}
             >
               {l.label}
-            </NavLink>
+            </Link>
           ))}
           <span className="flex items-center gap-3 md:ml-3 md:pl-3 md:border-l md:border-foreground/30">
             <Link to="/contacts" aria-label="Mail" className="opacity-70 hover:opacity-100">
