@@ -1,4 +1,5 @@
 import ex01 from "@/assets/ex-01.jpg";
+import ex02 from "@/assets/ex-02.jpg";
 
 export type Exhibition = {
   slug: string;
@@ -6,7 +7,7 @@ export type Exhibition = {
   desc: string;
   code: string;
   img: string;
- category: string;
+  category: string;
   date: string;
   location: string;
   curator: string;
@@ -17,17 +18,34 @@ export const exhibitions: Exhibition[] = [
   {
     slug: "vonis-akbp-basuki-semarang",
     title: "Oknum Polisi Divonis 6 Tahun",
-    desc: "Pengadilan Negeri Semarang menjatuhkan hukuman enam tahun penjara terhadap AKBP Basuki.",
-    code: "NEWS26",
+    desc: "AKBP Basuki divonis enam tahun penjara.",
+    code: "26S",
     img: ex01,
     category: "Kriminal",
     date: "21 Mei 2026",
-    location: "Pengadilan Negeri Semarang",
-    curator: "ANTARA News",
+    location: "PN Semarang",
+    curator: "ANTARA",
     longDesc: [
-      "Pengadilan Negeri Kota Semarang menjatuhkan hukuman enam tahun penjara kepada AKBP Basuki, seorang anggota Polri aktif yang menjadi terdakwa dalam kasus kematian perempuan dosen berinisial DL. Putusan yang dibacakan Hakim Ketua Achmad Rasjid tersebut lebih berat dibanding tuntutan jaksa penuntut umum yang sebelumnya meminta hukuman lima tahun penjara.",
-      
-      "Majelis hakim menyatakan terdakwa terbukti melanggar Pasal 474 Ayat 3 KUHP tentang kealpaan yang mengakibatkan kematian seseorang. Dalam pertimbangannya, hakim menilai terdakwa mengetahui korban berada dalam kondisi darurat namun tidak memberikan pertolongan maupun akses medis yang dapat menyelamatkan nyawa korban. Setelah putusan dibacakan, terdakwa menyatakan banding sementara pihak penuntut umum masih mempertimbangkan langkah hukum lanjutan."
+      "Pengadilan Negeri Semarang menjatuhkan hukuman enam tahun penjara kepada AKBP Basuki dalam kasus kematian dosen perempuan berinisial DL.",
+
+      "Majelis hakim menilai terdakwa mengabaikan kondisi korban yang membutuhkan pertolongan medis hingga akhirnya meninggal dunia.",
+    ],
+  },
+
+  {
+    slug: "vonis-robig-semarang",
+    title: "PN Semarang Vonis Robig",
+    desc: "Robig dihukum 15 tahun penjara.",
+    code: "15S",
+    img: ex02,
+    category: "Kriminal",
+    date: "08 Agt 2025",
+    location: "PN Semarang",
+    curator: "DANDAPALA",
+    longDesc: [
+      "Majelis hakim PN Semarang menyatakan Robig Zaenudin terbukti melakukan kekerasan terhadap anak yang mengakibatkan korban meninggal dunia dan luka.",
+
+      "Terdakwa dijatuhi hukuman 15 tahun penjara serta denda Rp200 juta setelah penembakan yang menewaskan seorang pelajar di Semarang.",
     ],
   },
 ];
