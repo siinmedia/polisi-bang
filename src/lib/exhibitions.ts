@@ -17,7 +17,7 @@ export const exhibitions: Exhibition[] = [
   {
     slug: "vonis-akbp-basuki-semarang",
     title: "Oknum Polisi Divonis 6 Tahun",
-    desc: "Pengadilan Negeri Semarang menjatuhkan hukuman enam tahun penjara terhadap AKBP Basuki dalam kasus kematian seorang dosen perempuan.",
+    desc: "Pengadilan Negeri Semarang menjatuhkan hukuman enam tahun penjara terhadap AKBP Basuki.",
     code: "NEWS26",
     img: ex01,
     category: "Kriminal",
